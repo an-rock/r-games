@@ -6,8 +6,13 @@
     "cover": "https://tr.rbxcdn.com/180deg-450x270/4241034201.png",
     "status": "played",
     "rating": 5,
+    "favorite": true,
     "dateAdded": "2024-01-15",
-    "robloxUrl": "https://www.roblox.com/games/4924922222/Brookhaven"
+    "robloxUrl": "https://www.roblox.com/games/4924922222/Brookhaven",
+    "likes": 2847,
+    "dislikes": 156,
+    "visits": 28473921,
+    "players": 12450
   },
   {
     "id": "2",
@@ -16,8 +21,13 @@
     "cover": "https://tr.rbxcdn.com/180deg-450x270/9207850682.png",
     "status": "played",
     "rating": 4,
+    "favorite": false,
     "dateAdded": "2024-02-20",
-    "robloxUrl": "https://www.roblox.com/games/920587231/Adopt-Me"
+    "robloxUrl": "https://www.roblox.com/games/920587231/Adopt-Me",
+    "likes": 1923,
+    "dislikes": 89,
+    "visits": 31204581,
+    "players": 8930
   },
   {
     "id": "3",
@@ -26,8 +36,13 @@
     "cover": "https://tr.rbxcdn.com/180deg-450x270/15147513023.png",
     "status": "plan-to-play",
     "rating": 0,
+    "favorite": false,
     "dateAdded": "2024-03-10",
-    "robloxUrl": "https://www.roblox.com/games/13772394625/Blade-Ball"
+    "robloxUrl": "https://www.roblox.com/games/13772394625/Blade-Ball",
+    "likes": 0,
+    "dislikes": 0,
+    "visits": 5820134,
+    "players": 2100
   },
   {
     "id": "4",
@@ -36,7 +51,12 @@
     "cover": "https://tr.rbxcdn.com/180deg-450x270/12615973222.png",
     "status": "played",
     "rating": 5,
+    "favorite": true,
     "dateAdded": "2024-01-05",
-    "robloxUrl": "https://www.roblox.com/games/6516141723/DOORS"
+    "robloxUrl": "https://www.roblox.com/games/6516141723/DOORS",
+    "likes": 4102,
+    "dislikes": 234,
+    "visits": 12847291,
+    "players": 5670
   }
 ]

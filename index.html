@@ -5,137 +5,242 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Roblox Games</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>🎮 My Roblox Games</h1>
-    <p class="subtitle">Games I've played & plan to play</p>
-    <button id="admin-btn" class="admin-btn" title="Admin" style="display: none;">⚙️</button>
-  </header>
+  <div class="page-wrapper">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <a href="#" class="logo" title="Home">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span class="logo-text">ROBLOX</span>
+        </a>
+        <nav class="main-nav">
+          <a href="#" class="nav-item active">Games</a>
+          <a href="#" class="nav-item">Avatar</a>
+          <a href="#" class="nav-item">Create</a>
+          <a href="#" class="nav-item">Marketplace</a>
+        </nav>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="search" placeholder="Search games..." class="search-input">
+        </div>
+        <button id="admin-btn" class="btn-icon" title="Admin Panel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </button>
+        <div class="user-menu">
+          <div class="user-avatar">U</div>
+          <span class="username">Player</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+        </div>
+      </div>
+    </header>
 
-  <main>
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="played">Played</button>
-      <button class="filter-btn" data-filter="plan-to-play">Plan to Play</button>
-    </div>
+    <!-- Sub Navigation -->
+    <nav class="sub-nav">
+      <div class="sub-nav-inner">
+        <a href="#" class="sub-nav-item active" data-filter="all"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg> All Games</a>
+        <a href="#" class="sub-nav-item" data-filter="played"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Played</a>
+        <a href="#" class="sub-nav-item" data-filter="plan-to-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Plan to Play</a>
+        <a href="#" class="sub-nav-item" data-filter="favorites"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Favorites</a>
+      </div>
+    </nav>
 
-    <div id="games-grid" class="games-grid"></div>
-  </main>
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">My Stats</h3>
+            <div class="stat-row">
+              <span class="stat-label">Games Tracked</span>
+              <span class="stat-value" id="stat-total">0</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Played</span>
+              <span class="stat-value" id="stat-played">0</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Plan to Play</span>
+              <span class="stat-value" id="stat-planned">0</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Favorites</span>
+              <span class="stat-value" id="stat-favorites">0</span>
+            </div>
+          </div>
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Quick Actions</h3>
+            <button class="sidebar-btn" id="export-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Export JSON</button>
+            <button class="sidebar-btn" id="import-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg> Import JSON</button>
+            <input type="file" id="import-file" accept=".json" hidden>
+            <button class="sidebar-btn btn-danger" id="push-btn" disabled><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Push to GitHub</button>
+          </div>
+        </aside>
+
+        <!-- Games Grid -->
+        <section class="games-section">
+          <div class="section-header">
+            <h2 class="section-title">My Games</h2>
+            <span class="games-count" id="games-count">0 games</span>
+          </div>
+          <div id="games-grid" class="games-grid"></div>
+          <div id="empty-state" class="empty-state hidden">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+            <p>No games found</p>
+            <button class="btn-primary" id="empty-add-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add Your First Game</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#" id="footer-admin">Admin</a>
+        </div>
+        <p class="footer-copyright">Data in <code>games.json</code> — Not affiliated with Roblox Corporation</p>
+      </div>
+    </footer>
+  </div>
 
   <!-- Admin Login Modal -->
   <div id="login-modal" class="modal hidden">
-    <div class="modal-content">
-      <h2>Admin Login</h2>
-      <form id="login-form">
-        <div class="form-group">
+    <div class="modal-backdrop"></div>
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3>Admin Login</h3>
+        <button class="modal-close" id="login-close">&times;</button>
+      </div>
+      <form id="login-form" class="modal-body">
+        <div class="form-field">
           <label for="username">Username</label>
           <input type="text" id="username" required autocomplete="username">
         </div>
-        <div class="form-group">
+        <div class="form-field">
           <label for="password">Password</label>
           <input type="password" id="password" required autocomplete="current-password">
         </div>
-        <button type="submit" class="btn-primary">Login</button>
-        <button type="button" class="btn-secondary" id="login-cancel">Cancel</button>
+        <p id="login-error" class="form-error hidden"></p>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary btn-block">Login</button>
+          <button type="button" class="btn-secondary btn-block" id="login-cancel">Cancel</button>
+        </div>
       </form>
-      <p id="login-error" class="error hidden"></p>
     </div>
   </div>
 
   <!-- Admin Panel Modal -->
   <div id="admin-modal" class="modal hidden">
-    <div class="modal-content large">
-      <div class="admin-header">
-        <h2>Admin Panel</h2>
-        <button id="admin-close" class="icon-btn" title="Close">✕</button>
+    <div class="modal-backdrop"></div>
+    <div class="modal-window modal-large">
+      <div class="modal-header">
+        <h3>Admin Panel</h3>
+        <button class="modal-close" id="admin-close">&times;</button>
       </div>
-      <div class="admin-tabs">
-        <button class="tab-btn active" data-tab="games">Games</button>
-        <button class="tab-btn" data-tab="add">Add Game</button>
-        <button class="tab-btn" data-tab="import">Import/Export</button>
-      </div>
+      <div class="modal-body">
+        <div class="admin-tabs">
+          <button class="admin-tab active" data-tab="games">Games</button>
+          <button class="admin-tab" data-tab="add">Add Game</button>
+          <button class="admin-tab" data-tab="settings">Settings</button>
+        </div>
 
-      <!-- Games List Tab -->
-      <div id="tab-games" class="tab-panel">
-        <div id="admin-games-list"></div>
-      </div>
+        <div id="tab-games" class="admin-tab-panel">
+          <div id="admin-games-list"></div>
+        </div>
 
-      <!-- Add/Edit Game Tab -->
-      <div id="tab-add" class="tab-panel hidden">
-        <form id="game-form">
-          <input type="hidden" id="game-id">
-          <div class="form-row">
-            <div class="form-group">
+        <div id="tab-add" class="admin-tab-panel hidden">
+          <form id="game-form" class="game-form">
+            <input type="hidden" id="game-id">
+            <div class="form-field">
               <label for="game-title">Title *</label>
-              <input type="text" id="game-title" required>
+              <input type="text" id="game-title" required placeholder="Enter game title">
             </div>
-            <div class="form-group">
-              <label for="game-status">Status *</label>
-              <select id="game-status" required>
-                <option value="played">Played</option>
-                <option value="plan-to-play">Plan to Play</option>
-              </select>
+            <div class="form-field">
+              <label for="game-desc">Description *</label>
+              <textarea id="game-desc" rows="4" required placeholder="Describe the game..."></textarea>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="game-desc">Description *</label>
-            <textarea id="game-desc" rows="4" required></textarea>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="game-cover">Cover Image URL *</label>
-              <input type="url" id="game-cover" required placeholder="https://tr.rbxcdn.com/180deg-450x270/PLACE_ID.png">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="game-cover">Cover Image URL *</label>
+                <input type="url" id="game-cover" required placeholder="https://tr.rbxcdn.com/...">
+              </div>
+              <div class="form-field">
+                <label for="game-status">Status *</label>
+                <select id="game-status" required>
+                  <option value="played">Played</option>
+                  <option value="plan-to-play">Plan to Play</option>
+                </select>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="game-rating">Rating</label>
-              <select id="game-rating">
-                <option value="0">☆☆☆☆☆</option>
-                <option value="1">★☆☆☆☆</option>
-                <option value="2">★★☆☆☆</option>
-                <option value="3">★★★☆☆</option>
-                <option value="4">★★★★☆</option>
-                <option value="5">★★★★★</option>
-              </select>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="game-rating">Rating</label>
+                <select id="game-rating">
+                  <option value="0">☆☆☆☆☆ (None)</option>
+                  <option value="1">★☆☆☆☆</option>
+                  <option value="2">★★☆☆☆</option>
+                  <option value="3">★★★☆☆</option>
+                  <option value="4">★★★★☆</option>
+                  <option value="5">★★★★★</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="game-favorite">Favorite</label>
+                <select id="game-favorite">
+                  <option value="false">No</option>
+                  <option value="true">Yes</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="game-url">Roblox URL *</label>
-              <input type="url" id="game-url" required placeholder="https://www.roblox.com/games/...">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="game-url">Roblox URL *</label>
+                <input type="url" id="game-url" required placeholder="https://www.roblox.com/games/...">
+              </div>
+              <div class="form-field">
+                <label for="game-date">Date Added</label>
+                <input type="date" id="game-date">
+              </div>
             </div>
-            <div class="form-group">
-              <label for="game-date">Date Added</label>
-              <input type="date" id="game-date">
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" id="game-submit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Save Game</button>
+              <button type="button" class="btn-secondary" id="game-cancel">Cancel</button>
             </div>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn-primary" id="game-submit">Save Game</button>
-            <button type="button" class="btn-secondary" id="game-cancel">Cancel</button>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
 
-      <!-- Import/Export Tab -->
-      <div id="tab-import" class="tab-panel hidden">
-        <div class="import-export">
-          <div class="action-box">
-            <h3>Export Games</h3>
-            <p>Download current games.json to backup or edit locally.</p>
-            <button id="export-btn" class="btn-primary">Download JSON</button>
+        <div id="tab-settings" class="admin-tab-panel hidden">
+          <div class="settings-section">
+            <h4>GitHub Integration</h4>
+            <p class="settings-desc">Enter a Personal Access Token (repo scope) to push changes directly to GitHub.</p>
+            <div class="form-field">
+              <label for="github-pat">GitHub PAT</label>
+              <input type="password" id="github-pat" placeholder="ghp_..." autocomplete="off">
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn-primary" id="save-pat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Save Token</button>
+              <span id="pat-status" class="status-msg hidden"></span>
+            </div>
           </div>
-          <div class="action-box">
-            <h3>Import Games</h3>
-            <p>Upload a games.json file to replace all games.</p>
-            <input type="file" id="import-file" accept=".json" hidden>
-            <button id="import-btn" class="btn-secondary">Choose File</button>
-            <p id="import-status" class="status-msg hidden"></p>
-          </div>
-          <div class="action-box">
-            <h3>Push to GitHub</h3>
-            <p>Commit changes directly to the repo (requires GitHub PAT in config).</p>
-            <button id="push-btn" class="btn-primary" disabled>Push to GitHub</button>
-            <p id="push-status" class="status-msg hidden"></p>
+          <div class="settings-section">
+            <h4>Device Trust</h4>
+            <p class="settings-desc">This device is <span id="device-trust-status">not trusted</span>.</p>
+            <div class="form-actions">
+              <button type="button" class="btn-primary" id="trust-device"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Trust This Device</button>
+              <button type="button" class="btn-secondary" id="untrust-device"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Revoke Trust</button>
+            </div>
           </div>
         </div>
       </div>
@@ -144,19 +249,24 @@
 
   <!-- Confirm Delete Modal -->
   <div id="confirm-modal" class="modal hidden">
-    <div class="modal-content small">
-      <h3 id="confirm-title">Confirm</h3>
-      <p id="confirm-message"></p>
-      <div class="modal-actions">
-        <button id="confirm-yes" class="btn-danger">Delete</button>
-        <button id="confirm-no" class="btn-secondary">Cancel</button>
+    <div class="modal-backdrop"></div>
+    <div class="modal-window modal-small">
+      <div class="modal-header">
+        <h3 id="confirm-title">Confirm</h3>
+        <button class="modal-close" id="confirm-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="confirm-message"></p>
+        <div class="form-actions">
+          <button type="button" class="btn-danger" id="confirm-yes">Delete</button>
+          <button type="button" class="btn-secondary" id="confirm-no">Cancel</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <footer>
-    <p>Data in <code>games.json</code> — <a href="#" id="footer-admin" style="display: none;">Admin</a> • Hosted on GitHub Pages</p>
-  </footer>
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
 
   <script src="script.js"></script>
 </body>
