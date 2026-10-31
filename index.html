@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Roblox Games Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎮 My Roblox Games</h1>
+    <p class="subtitle">Games I've played & plan to play</p>
+  </header>
+
+  <main>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="played">Played</button>
+      <button class="filter-btn" data-filter="plan-to-play">Plan to Play</button>
+    </div>
+
+    <div id="games-grid" class="games-grid"></div>
+  </main>
+
+  <footer>
+    <p>Data stored in <code>games.json</code> — edit directly to add games. Host on GitHub Pages.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

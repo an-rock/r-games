@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "Brookhaven",
+    "description": "A popular roleplay game where you can live in a town, drive cars, own homes, and interact with other players. Great for casual hangouts.",
+    "cover": "https://tr.rbxcdn.com/180deg-450x270/4241034201.png",
+    "status": "played",
+    "rating": 5,
+    "dateAdded": "2024-01-15",
+    "robloxUrl": "https://www.roblox.com/games/4924922222/Brookhaven"
+  },
+  {
+    "id": "2",
+    "title": "Adopt Me!",
+    "description": "Raise and trade virtual pets, decorate your home, and explore a magical world. One of the most played games on Roblox.",
+    "cover": "https://tr.rbxcdn.com/180deg-450x270/9207850682.png",
+    "status": "played",
+    "rating": 4,
+    "dateAdded": "2024-02-20",
+    "robloxUrl": "https://www.roblox.com/games/920587231/Adopt-Me"
+  },
+  {
+    "id": "3",
+    "title": "Blade Ball",
+    "description": "Fast-paced competitive game where you deflect a homing ball with your sword. Requires good timing and reflexes.",
+    "cover": "https://tr.rbxcdn.com/180deg-450x270/15147513023.png",
+    "status": "plan-to-play",
+    "rating": 0,
+    "dateAdded": "2024-03-10",
+    "robloxUrl": "https://www.roblox.com/games/13772394625/Blade-Ball"
+  },
+  {
+    "id": "4",
+    "title": "DOORS",
+    "description": "Horror escape game where you navigate through procedurally generated rooms while avoiding entities. Best played with friends.",
+    "cover": "https://tr.rbxcdn.com/180deg-450x270/12615973222.png",
+    "status": "played",
+    "rating": 5,
+    "dateAdded": "2024-01-05",
+    "robloxUrl": "https://www.roblox.com/games/6516141723/DOORS"
+  }
+]
