@@ -54,7 +54,13 @@ let deleteTargetId = null;
 // UTILITIES
 // ============================================
 function escapeHtml(str) {
-  return String(str).replace(/[&<>"']/g, c => ({'&':'&','<':'<','>':'>','"':'"',"'":'''}[c]));
+  return String(str).replace(/[&<>"']/g, c => ({
+    '&': '&',
+    '<': '<',
+    '>': '>',
+    '"': '"',
+    "'": '''
+  }[c]));
 }
 
 function formatDate(iso) {
