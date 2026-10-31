@@ -545,3 +545,6 @@ a:hover { text-decoration: underline; }
 .toast.success { border-left: 3px solid var(--primary); }
 .toast.error { border-left: 3px solid var(--danger); }
 .toast.info { border-left: 3px solid var(--blue); }
+
+/* Utility */
+.hidden { display: none !important; }
